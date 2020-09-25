@@ -4,7 +4,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-    <BrowserRouter basename="/NewsLaundry-Chetan">
+    <BrowserRouter basename="/">
         <Suspense
             fallback={
                 <div className="text-center m-5 text-uppercase">Loading...</div>

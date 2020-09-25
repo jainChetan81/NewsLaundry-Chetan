@@ -1,1 +1,1 @@
-https://jainchetan81.github.io/
+http://jainChetan81.github.io/NewsLaundry-Chetan
