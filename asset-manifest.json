@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/NewsLaundry-Chetan/static/css/main.d71b82ff.chunk.css",
+    "main.js": "/NewsLaundry-Chetan/static/js/main.ff6d8386.chunk.js",
+    "main.js.map": "/NewsLaundry-Chetan/static/js/main.ff6d8386.chunk.js.map",
+    "runtime-main.js": "/NewsLaundry-Chetan/static/js/runtime-main.78004d4e.js",
+    "runtime-main.js.map": "/NewsLaundry-Chetan/static/js/runtime-main.78004d4e.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/NewsLaundry-Chetan/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.93e0af6f.chunk.js": "/NewsLaundry-Chetan/static/js/2.93e0af6f.chunk.js",
+    "static/js/2.93e0af6f.chunk.js.map": "/NewsLaundry-Chetan/static/js/2.93e0af6f.chunk.js.map",
+    "index.html": "/NewsLaundry-Chetan/index.html",
+    "precache-manifest.1bd4ebd6c927fa47c33d4b308628675c.js": "/NewsLaundry-Chetan/precache-manifest.1bd4ebd6c927fa47c33d4b308628675c.js",
+    "service-worker.js": "/NewsLaundry-Chetan/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/NewsLaundry-Chetan/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.d71b82ff.chunk.css.map": "/NewsLaundry-Chetan/static/css/main.d71b82ff.chunk.css.map",
+    "static/js/2.93e0af6f.chunk.js.LICENSE.txt": "/NewsLaundry-Chetan/static/js/2.93e0af6f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.78004d4e.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.93e0af6f.chunk.js",
+    "static/css/main.d71b82ff.chunk.css",
+    "static/js/main.ff6d8386.chunk.js"
+  ]
+}
