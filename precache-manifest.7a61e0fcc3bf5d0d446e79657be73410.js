@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b442473ab8a3430782455a9023e98c0b",
+    "revision": "dd2c77a69050b8e24a6eb31e616be971",
     "url": "/NewsLaundry-Chetan/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/NewsLaundry-Chetan/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "d39c1c125dbfeecbc665",
+    "revision": "b50dc741f483975f12d1",
     "url": "/NewsLaundry-Chetan/static/css/main.d71b82ff.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/NewsLaundry-Chetan/static/js/2.ae970b4f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d39c1c125dbfeecbc665",
-    "url": "/NewsLaundry-Chetan/static/js/main.aa49939d.chunk.js"
+    "revision": "b50dc741f483975f12d1",
+    "url": "/NewsLaundry-Chetan/static/js/main.9102efb7.chunk.js"
   },
   {
     "revision": "37926c7e3d7dfe775267",
