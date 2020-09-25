@@ -21,22 +21,34 @@ export default class App extends Component {
         e.preventDefault();
         const newsName = e.target.elements.news.value;
         const filteredNews = this.state.news.filter((e) => {
-            return e.story.headline
-                .trim()
-                .replace(/\s+/g, "")
-                .toLowerCase()
-                .includes(newsName);
-        });
-        const filteredPreferredNews = this.state.preferencedNews?.filter(
-            (e) => {
-                return e.story.headline
+            return (
+                e.story.headline
                     .trim()
                     .replace(/\s+/g, "")
                     .toLowerCase()
-                    .includes(newsName);
+                    .includes(newsName) ||
+                e.story.headline
+                    .trim()
+                    .toLowerCase()
+                    .includes(newsName.toLowerCase())
+            );
+        });
+        const filteredPreferredNews = this.state.preferencedNews?.filter(
+            (e) => {
+                return (
+                    e.story.headline
+                        .trim()
+                        .replace(/\s+/g, "")
+                        .toLowerCase()
+                        .includes(newsName) ||
+                    e.story.headline
+                        .trim()
+                        .toLowerCase()
+                        .includes(newsName.toLowerCase())
+                );
             }
         );
-        const filteredArray = filteredPreferredNews.concat(filteredNews);
+        const filteredArray = [...filteredPreferredNews, ...filteredNews];
         this.setState({
             loading: false,
             filteredNews: [...filteredArray],
