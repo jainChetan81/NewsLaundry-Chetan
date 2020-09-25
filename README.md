@@ -1,1 +1,1 @@
-link for page: https://jainchetan81.github.io/
+https://jainchetan81.github.io/
