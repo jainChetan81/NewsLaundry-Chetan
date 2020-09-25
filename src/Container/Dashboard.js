@@ -3,6 +3,7 @@ import NewsList from "../components/NewsList";
 import axios from "axios";
 import Form from "../components/Form";
 import Spinner from "../components/Spinner/Spinner";
+import { getFromStorage, setInStorage } from "../utils/localStorage";
 export default class App extends Component {
     state = {
         news: [],
@@ -12,7 +13,7 @@ export default class App extends Component {
     getNews = (e) => {
         e.preventDefault();
         const recipeName = e.target.elements.news.value;
-        console.log(recipeName); //https://cors-anywhere.herokuapp.com/
+        console.log(recipeName); 
     };
     componentDidMount() {
         window.title = "News Laundry";
@@ -64,6 +65,7 @@ export default class App extends Component {
                     news: updatedNews,
                     loading: false,
                 });
+                setInStorage("news,", updatedNews);
             })
             .catch((err) => {
                 console.log(err);

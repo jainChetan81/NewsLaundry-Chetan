@@ -3,19 +3,11 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 export default function NewsCard(props) {
+    const image = `https://source.unsplash.com/300x2${props.index + 10}`;
     return (
         <div className="col-md-4" style={{ marginBottom: "2rem" }}>
             <div className="recipes__box">
-                <img
-                    className="recipes__box-img"
-                    src="../assests/img/newslaundryLogo.png"
-                    // src={
-                    //     item.story["hero-image-s3-key"]
-                    //         ? item.story["hero-image-s3-key"]
-                    //         : "../assests/img/newslaundryLogo.png"
-                    // }
-                    // alt={item.item.headline[0]}
-                />
+                <img className="recipes__box-img" src={image} />
                 <div className="recipe__text">
                     <h5 className="recipes__title">
                         {props.item.item.headline[0].length < 20

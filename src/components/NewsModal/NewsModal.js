@@ -10,11 +10,7 @@ export default class NewsModal extends Component {
                         {news.length !== 0 && (
                             <div className="active-recipe">
                                 <img
-                                    src={
-                                        news[
-                                            "newslaundry/2020-09/9cb3…1292f27/DU_Exams_AI.jpg"
-                                        ]
-                                    }
+                                    src={`https://source.unsplash.com/300x299`}
                                     alt={news.headline}
                                     className="active-recipe__img"
                                 />
