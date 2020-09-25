@@ -25,7 +25,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const NewsList = ({ news, addPrefer, removePrefer, preferNews }) => {
+const NewsList = ({
+    news,
+    addPrefer,
+    removePrefer,
+    preferNews,
+    filteredNews,
+    searchString,
+}) => {
     const [modalStyle] = React.useState(getModalStyle);
     const [show, showModal] = useState(false);
     const [modal, setModal] = useState(null);
@@ -46,34 +53,54 @@ const NewsList = ({ news, addPrefer, removePrefer, preferNews }) => {
             </Modal>
             <Auxillary>
                 <div className="container">
-                    {preferNews[0] && (
-                        <h3 className="text-center">Prefered News</h3>
+                    {searchString !== "" ? (
+                        <Auxillary>
+                            <h3 className="text-center">Filtered News</h3>
+                            <div className="row">
+                                {filteredNews.map((item, index) => (
+                                    <NewsCard
+                                        key={item.id}
+                                        index={index}
+                                        item={item}
+                                        showModalInfo={showModalInfo}
+                                        addPrefer={addPrefer}
+                                        removePrefer={removePrefer}
+                                    />
+                                ))}
+                            </div>
+                        </Auxillary>
+                    ) : (
+                        <Auxillary>
+                            {preferNews[0] && (
+                                <h3 className="text-center">Prefered News</h3>
+                            )}
+                            <div className="row">
+                                {preferNews.map((item, index) => (
+                                    <NewsCard
+                                        key={item.id}
+                                        index={index}
+                                        item={item}
+                                        showModalInfo={showModalInfo}
+                                        addPrefer={addPrefer}
+                                        removePrefer={removePrefer}
+                                    />
+                                ))}
+                            </div>
+                            <h3 className="text-center">Simple News</h3>
+                            <div className="row">
+                                {news.map((item, index) => (
+                                    <NewsCard
+                                        key={item.id}
+                                        index={index}
+                                        item={item}
+                                        showModalInfo={showModalInfo}
+                                        addPrefer={addPrefer}
+                                        removePrefer={removePrefer}
+                                    />
+                                ))}
+                            </div>
+                        </Auxillary>
                     )}
-                    <div className="row">
-                        {preferNews.map((item, index) => (
-                            <NewsCard
-                                key={item.id}
-                                index={index}
-                                item={item}
-                                showModalInfo={showModalInfo}
-                                addPrefer={addPrefer}
-                                removePrefer={removePrefer}
-                            />
-                        ))}
-                    </div>
-                    <h3 className="text-center">Simple News</h3>
-                    <div className="row">
-                        {news.map((item, index) => (
-                            <NewsCard
-                                key={item.id}
-                                index={index}
-                                item={item}
-                                showModalInfo={showModalInfo}
-                                addPrefer={addPrefer}
-                                removePrefer={removePrefer}
-                            />
-                        ))}
-                    </div>
                 </div>
             </Auxillary>
         </Auxillary>

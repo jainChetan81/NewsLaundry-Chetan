@@ -6,7 +6,12 @@ const Form = (props) => (
             props.getNews(e);
         }}
         style={{ marginBottom: "2rem" }}>
-        <input className="form__input" type="text" name="news" />
+        <input
+            className="form__input"
+            type="text"
+            name="news"
+            placeholder="Press Enter to search"
+        />
         <button className="form__button">Search</button>
     </form>
 );

@@ -13,11 +13,25 @@ export default class App extends Component {
         news: [],
         preferencedNews: [],
         loading: false,
+        filteredNews: [],
+        searchString: "",
     };
     getNews = (e) => {
+        this.setState({ loading: true });
         e.preventDefault();
         const newsName = e.target.elements.news.value;
-        console.log(newsName);
+        const filteredNews = this.state.news.filter((e) => {
+            return e.story.headline
+                .trim()
+                .replace(/\s+/g, "")
+                .toLowerCase()
+                .includes(newsName);
+        });
+        this.setState({
+            loading: false,
+            filteredNews: [...filteredNews],
+            searchString: newsName,
+        });
     };
     componentDidMount() {
         window.title = "News Laundry";
@@ -96,13 +110,6 @@ export default class App extends Component {
             });
     }
 
-    // componentDidUpdate() {
-    //     if (this.state.news) {
-    //         const news = JSON.stringify(this.state.newss);
-    //         localStorage.setItem("newzs", news);
-    //     }
-    // }
-
     render() {
         const { news } = this.state;
         return (
@@ -118,7 +125,9 @@ export default class App extends Component {
                         <p>News can't be loaded</p>
                     ) : (
                         <NewsList
+                            filteredNews={this.state.filteredNews}
                             news={news}
+                            searchString={this.state.searchString}
                             preferNews={this.state.preferencedNews}
                             addPrefer={this.addPreferencedNews}
                             removePrefer={this.removePreferencedNews}
