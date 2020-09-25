@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/NewsLaundry-Chetan/precache-manifest.1bd4ebd6c927fa47c33d4b308628675c.js"
+  "/NewsLaundry-Chetan/precache-manifest.bf8dc1ec47062bae8c6ef7227bc80dd9.js"
 );
 
 self.addEventListener('message', (event) => {
