@@ -36,7 +36,7 @@ button:focus {
     font-size: 1.5em;
 }
 
-.recipe_buttons {
+.news_buttons {
     border: solid 2px #e74c3c;
     background: transparent;
     padding: 0.4rem 0.6rem;
@@ -48,7 +48,7 @@ button:focus {
     margin-left: 0.7rem;
 }
 
-.recipes__box {
+.newss__box {
     background: #fff;
     padding-bottom: 2rem;
     border-radius: 5px;
@@ -57,25 +57,25 @@ button:focus {
     overflow: hidden;
 }
 
-.recipe__text {
+.news__text {
     margin-left: 15px;
 }
 
-.recipes__title {
+.newss__title {
     color: #e74c3c;
     text-transform: uppercase;
     font-size: 1.1rem;
     padding: 1.8rem 0 0.2rem 0;
 }
 
-.recipes__subtitle {
+.newss__subtitle {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.8rem;
     letter-spacing: 2px;
 }
 
-.recipes__subtitle span {
+.newss__subtitle span {
     text-transform: none;
     font-weight: 400;
     font-size: 0.8rem;
@@ -108,12 +108,12 @@ input[type="text"] {
     outline: none;
 }
 
-.active-recipe {
+.active-news {
     margin: 0 auto;
     width: 90%;
 }
 
-.active-recipe__img {
+.active-news__img {
     margin-left: auto;
     margin-top: 10px;
     display: block;
@@ -122,15 +122,15 @@ input[type="text"] {
     width: 400px !important;
 }
 @media screen and (max-width: 600px) {
-    .active-recipe {
+    .active-news {
         margin: 0 auto;
         width: 100%;
     }
-    .active-recipe__img {
+    .active-news__img {
         height: 150px !important;
         width: 250px !important;
     }
-    .active-recipe__title {
+    .active-news__title {
         text-transform: uppercase;
         font-size: 18px;
         letter-spacing: 2px;
@@ -144,28 +144,28 @@ input[type="text"] {
     }
 }
 
-.active-recipe__title {
+.active-news__title {
     text-transform: uppercase;
     font-size: 18px;
     letter-spacing: 2px;
     margin: 1rem 0;
 }
 
-.active-recipe__publisher,
-.active-recipe__website {
+.active-news__publisher,
+.active-news__website {
     text-transform: uppercase;
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
-.active-recipe__publisher span {
+.active-news__publisher span {
     text-transform: none;
     font-weight: 300;
     letter-spacing: 2px;
     margin-left: 5px;
 }
 
-.active-recipe__website span {
+.active-news__website span {
     text-transform: lowercase;
     font-weight: 300;
     letter-spacing: 2px;
@@ -173,7 +173,7 @@ input[type="text"] {
     margin-left: 10px;
 }
 
-.active-recipe__button {
+.active-news__button {
     border: solid 2px #e74c3c;
     background: transparent;
     padding: 0.2rem 0.9rem;

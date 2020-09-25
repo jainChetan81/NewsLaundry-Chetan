@@ -8,13 +8,13 @@ export default class NewsModal extends Component {
                 {news ? (
                     <div>
                         {news.length !== 0 && (
-                            <div className="active-recipe">
+                            <div className="active-news">
                                 <img
                                     src={`https://source.unsplash.com/300x299`}
                                     alt={news.headline}
-                                    className="active-recipe__img"
+                                    className="active-news__img"
                                 />
-                                <h3 className="active-recipe__title">
+                                <h3 className="active-news__title">
                                     {news.story.headline}
                                 </h3>
                                 <p>
@@ -30,7 +30,7 @@ export default class NewsModal extends Component {
                                         </a>
                                     </span>
                                 </p>
-                                <h5 className="active-recipe__publisher">
+                                <h5 className="active-news__publisher">
                                     Publisher:
                                     <span>{news.story["author-name"]}</span>
                                 </h5>

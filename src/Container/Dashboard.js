@@ -3,7 +3,11 @@ import NewsList from "../components/NewsList";
 import axios from "axios";
 import Form from "../components/Form";
 import Spinner from "../components/Spinner/Spinner";
-import { getFromStorage, setInStorage } from "../utils/localStorage";
+import {
+    getFromStorage,
+    setInStorage,
+    removeFromStorage,
+} from "../utils/localStorage";
 export default class App extends Component {
     state = {
         news: [],
@@ -12,8 +16,8 @@ export default class App extends Component {
     };
     getNews = (e) => {
         e.preventDefault();
-        const recipeName = e.target.elements.news.value;
-        console.log(recipeName); 
+        const newsName = e.target.elements.news.value;
+        console.log(newsName);
     };
     componentDidMount() {
         window.title = "News Laundry";
@@ -23,6 +27,12 @@ export default class App extends Component {
             this.setState({
                 news,
             });
+    }
+    setLocalStorage(news, preference) {
+        removeFromStorage("news");
+        removeFromStorage("preference");
+        setInStorage("news", news);
+        setInStorage("preference", preference);
     }
     addPreferencedNews = (id) => {
         console.log(id);
@@ -36,6 +46,7 @@ export default class App extends Component {
             news: updatedNews,
             preferencedNews: updatedPreferencedNews,
         });
+        this.setLocalStorage(updatedNews, updatedPreferencedNews);
     };
     removePreferencedNews = (id) => {
         console.log(id);
@@ -44,14 +55,26 @@ export default class App extends Component {
         let spliced = updatedPreferencedNews.splice(id, 1);
         spliced[0].liked = false;
         updatedNews.unshift(spliced[0]);
-        // console.log("spliced", spliced[0], updatedPreferencedNews);
         this.setState({
             news: updatedNews,
             preferencedNews: updatedPreferencedNews,
         });
+        this.setLocalStorage(updatedNews, updatedPreferencedNews);
     };
-    componentWillMount() {
+    async componentDidMount() {
         this.setState({ loading: true });
+        const news = await getFromStorage("news");
+        const preference = await getFromStorage("preference");
+        if (!news) return this.getNewsItems();
+        return this.setState({
+            news: news,
+            preferencedNews: preference,
+            loading: false,
+        });
+    }
+
+    getNewsItems() {
+        console.log("getNewsItems");
         axios
             .get(
                 "https://nl-static-site-assets.s3.ap-south-1.amazonaws.com/reports.json"
@@ -65,7 +88,7 @@ export default class App extends Component {
                     news: updatedNews,
                     loading: false,
                 });
-                setInStorage("news,", updatedNews);
+                this.setLocalStorage(updatedNews, this.state.preferencedNews);
             })
             .catch((err) => {
                 console.log(err);
@@ -75,7 +98,7 @@ export default class App extends Component {
 
     // componentDidUpdate() {
     //     if (this.state.news) {
-    //         const news = JSON.stringify(this.state.recipes);
+    //         const news = JSON.stringify(this.state.newss);
     //         localStorage.setItem("newzs", news);
     //     }
     // }

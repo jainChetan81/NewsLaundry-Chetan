@@ -6,10 +6,10 @@ export default function NewsCard(props) {
     const image = `https://source.unsplash.com/300x2${props.index + 10}`;
     return (
         <div className="col-md-4" style={{ marginBottom: "2rem" }}>
-            <div className="recipes__box">
-                <img className="recipes__box-img" src={image} />
-                <div className="recipe__text">
-                    <h5 className="recipes__title">
+            <div className="newss__box">
+                <img className="newss__box-img" src={image} />
+                <div className="news__text">
+                    <h5 className="newss__title">
                         {props.item.item.headline[0].length < 20
                             ? `${props.item.item.headline[0]}`
                             : `${props.item.item.headline[0].substring(
@@ -17,7 +17,7 @@ export default function NewsCard(props) {
                                   55
                               )}...`}
                     </h5>
-                    <p className="recipes__subtitle">
+                    <p className="newss__subtitle">
                         Publisher :{" "}
                         <span>{props.item.story["author-name"]}</span>
                     </p>
@@ -26,7 +26,7 @@ export default function NewsCard(props) {
                     onClick={() => {
                         props.showModalInfo(props.item);
                     }}
-                    className="recipe_buttons">
+                    className="news_buttons">
                     View Story
                 </button>
                 <span className="videoSidebar__button">
