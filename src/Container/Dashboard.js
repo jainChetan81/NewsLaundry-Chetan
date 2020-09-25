@@ -26,7 +26,7 @@ export default class App extends Component {
                     .trim()
                     .replace(/\s+/g, "")
                     .toLowerCase()
-                    .includes(newsName) ||
+                    .includes(newsName.toLowerCase()) ||
                 e.story.headline
                     .trim()
                     .toLowerCase()
@@ -40,7 +40,7 @@ export default class App extends Component {
                         .trim()
                         .replace(/\s+/g, "")
                         .toLowerCase()
-                        .includes(newsName) ||
+                        .includes(newsName.toLowerCase()) ||
                     e.story.headline
                         .trim()
                         .toLowerCase()
