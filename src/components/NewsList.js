@@ -11,8 +11,8 @@ function rand() {
 }
 
 function getModalStyle() {
-    const top = 50 + rand();
-    const left = 50 + rand();
+    const top = 50;
+    const left = 50;
 
     return {
         top: `${top}%`,
@@ -24,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         position: "absolute",
         backgroundColor: "white",
-        display: "block",
-        "margin-left": "auto",
-        "margin-top": "10px",
-        "margin-right": "auto",
+        // display: "block",
+        // "margin-left": "auto",
+        // "margin-top": "10px",
+        // "margin-right": "auto",
         border: "2px solid #000",
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
@@ -49,9 +49,6 @@ const NewsList = ({ news, addPrefer, removePrefer, preferNews }) => {
     };
     return (
         <Auxillary>
-            {/* <Modal show={show} modalClosed={closeModal}>
-                <NewsModal activeNews={modal} />
-            </Modal> */}
             <Modal open={show} onClose={closeModal}>
                 <div style={modalStyle} className={classes.paper}>
                     <NewsModal activeNews={modal} />
