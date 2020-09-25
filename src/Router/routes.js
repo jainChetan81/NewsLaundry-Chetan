@@ -1,7 +1,7 @@
 import Dashboard from "../Container/Dashboard";
 const routes = [
     {
-        path: "",
+        path: "NewsLaundry-Chetan",
         name: "Dashboard",
         component: Dashboard,
         layout: "/",

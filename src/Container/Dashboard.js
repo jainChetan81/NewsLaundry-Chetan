@@ -129,7 +129,7 @@ export default class App extends Component {
             <div>
                 <div className="App">
                     <header className="App-header">
-                        <h1 className="App-title">News Search</h1>
+                        <h1 className="App-title">News Searchaaa</h1>
                     </header>
                     <Form getNews={this.getNews} />
                     {this.state.loading ? (
