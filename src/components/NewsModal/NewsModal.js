@@ -24,6 +24,7 @@ export default class NewsModal extends Component {
                                     Website :
                                     <span>
                                         <a
+                                            rel="noopener noreferrer"
                                             target="_blank"
                                             href={news.story.url}>
                                             Read More

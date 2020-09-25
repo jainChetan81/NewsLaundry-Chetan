@@ -61,6 +61,7 @@ const NewsList = ({
                                     <NewsCard
                                         key={item.id}
                                         index={index}
+                                        likeDisable={searchString !== ""}
                                         item={item}
                                         showModalInfo={showModalInfo}
                                         addPrefer={addPrefer}

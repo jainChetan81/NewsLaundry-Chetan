@@ -27,21 +27,22 @@ export default class App extends Component {
                 .toLowerCase()
                 .includes(newsName);
         });
+        const filteredPreferredNews = this.state.preferencedNews?.filter(
+            (e) => {
+                return e.story.headline
+                    .trim()
+                    .replace(/\s+/g, "")
+                    .toLowerCase()
+                    .includes(newsName);
+            }
+        );
+        const filteredArray = filteredPreferredNews.concat(filteredNews);
         this.setState({
             loading: false,
-            filteredNews: [...filteredNews],
+            filteredNews: [...filteredArray],
             searchString: newsName,
         });
     };
-    componentDidMount() {
-        window.title = "News Laundry";
-        const json = localStorage.getItem("news");
-        const news = JSON.parse(json);
-        if (news)
-            this.setState({
-                news,
-            });
-    }
     setLocalStorage(news, preference) {
         removeFromStorage("news");
         removeFromStorage("preference");

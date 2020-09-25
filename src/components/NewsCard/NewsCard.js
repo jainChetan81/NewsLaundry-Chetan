@@ -7,7 +7,11 @@ export default function NewsCard(props) {
     return (
         <div className="col-md-4" style={{ marginBottom: "2rem" }}>
             <div className="newss__box">
-                <img className="newss__box-img" src={image} />
+                <img
+                    className="newss__box-img"
+                    src={image}
+                    alt={`300x2${props.index + 10}`}
+                />
                 <div className="news__text">
                     <h5 className="newss__title">
                         {props.item.item.headline[0].length < 20
@@ -33,12 +37,18 @@ export default function NewsCard(props) {
                     {props.item.liked ? (
                         <FavoriteIcon
                             fontSize="large"
-                            onClick={(e) => props.removePrefer(props.index)}
+                            onClick={(e) => {
+                                if (!props.likeDisable)
+                                    props.removePrefer(props.index);
+                            }}
                         />
                     ) : (
                         <FavoriteBorderIcon
                             fontSize="large"
-                            onClick={(e) => props.addPrefer(props.index)}
+                            onClick={(e) => {
+                                if (!props.likeDisable)
+                                    props.addPrefer(props.index);
+                            }}
                         />
                     )}
                 </span>
